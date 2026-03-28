@@ -1,73 +1,53 @@
-# React + TypeScript + Vite
+# Self-Driving Car Simulation Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A high-fidelity, interactive web-based dashboard and simulation environment for monitoring autonomous vehicle systems. Designed with a professional, comprehensive user interface to visualize real-time telemetry, sensor data, AI decision schemas, and environmental obstacles.
 
-Currently, two official plugins are available:
+## 🚀 Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+*   **Real-time Telemetry & Dynamic Charts:** Monitor live performance metrics (speed, acceleration, steering angle, braking) rendered with interactive data visualizations.
+*   **Advanced Sensor Visualization:** Inspect discrete data feeds from multiple arrays, including 3D LiDAR point clouds, Camera views, and Radar objects.
+*   **AI Decision Logging:** Track the autonomous brain's continuous stream of actions, predictions, trajectory planning, and corresponding confidence levels.
+*   **Environment & Obstacle Controls:** Manipulate dynamic weather (rain, fog, time-of-day) and interactively spawn pedestrians, vehicles, and road hazards.
+*   **V2X Communication:** Monitor Vehicle-to-Everything message protocols, predicting interactions with infrastructure like traffic lights and connected entities.
+*   **ROS2 Integration Panel:** Bridging and monitoring interface for Robot Operating System 2 specific nodes, topics, and latency.
+*   **Interactive Minimap:** Top-down spatial view of the ego-vehicle's active position, route plotting, and surrounding mapped area.
+*   **System Health Dashboard:** Keep watch over core sub-system diagnostics, battery/power modules, and CPU/GPU compute loads.
 
-## React Compiler
+## 🛠 Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+*   **Framework:** React 18 + TypeScript
+*   **Build Tool:** Vite (for fast, optimized HMR and bundling)
+*   **Styling:** Custom Vanilla CSS with responsive auto-layout features and CSS variable themes.
 
-## Expanding the ESLint configuration
+## ⚙️ Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
+Ensure you have Node.js and npm installed on your machine.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Nandu0007/self-driving-car-simulation.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd self-driving-car-simulation
+   ```
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Running Locally
+
+To start the Vite development server:
+```bash
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Your app should now be running in your browser (typically at `http://localhost:5173`).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📄 License
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+This project is open-source and available under the terms of the [MIT License](LICENSE).
